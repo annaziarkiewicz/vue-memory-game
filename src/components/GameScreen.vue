@@ -1,36 +1,36 @@
 <template>
-    <div class="az-welcome-screen">
-        <div class="az-welcome-screen__background">
+    <div class="az-game-screen">
+        <div class="az-game-screen__box">
             <template v-if="screen === 'intro'">
-                <div class="az-welcome-screen__heading">
+                <div class="az-game-screen__heading">
                     Vue.js Memory game
                 </div>
 
-                <div class="az-welcome-screen__subtitle">
+                <div class="az-game-screen__subtitle">
                     This is a classic card-matching game played on a 6×4 grid.<br/>
                     The goal is to find and match pairs of identical cards.
                 </div>
             </template>
 
             <template v-else>
-                <div class="az-welcome-screen__heading">
+                <div class="az-game-screen__heading">
                     {{ winner }}
                 </div>
 
-                <div class="az-welcome-screen__subtitle">
+                <div class="az-game-screen__subtitle">
                     Time: <b>{{ time }}s</b> |  Moves: <b>{{ moves }}</b>
                 </div>
             </template>
 
-            <div class="az-welcome-screen__modes">
+            <div class="az-game-screen__modes">
                 <button
-                    class="az-welcome-screen__button az-welcome-screen__button--rose"
+                    class="az-game-screen__button az-game-screen__button--rose"
                     @click="$emit('play', 'solo')">
                     Play Solo
                 </button>
 
                 <button
-                    class="az-welcome-screen__button az-welcome-screen__button--mint"
+                    class="az-game-screen__button az-game-screen__button--mint"
                     @click="$emit('play', 'vsAI')">
                     Play vs AI
                 </button>
@@ -50,9 +50,8 @@ defineProps<{
 defineEmits(['play'])
 </script>
 
-
 <style lang="scss" scoped>
-.az-welcome-screen {
+.az-game-screen {
     position: absolute;
     top: 0;
     left: 0;
@@ -66,7 +65,7 @@ defineEmits(['play'])
     gap: 32px;
     background: rgba(175,175,168, .5);
 
-    &__background {
+    &__box {
         position: relative;
         width: 480px;
         height: 320px;

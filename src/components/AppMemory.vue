@@ -19,7 +19,7 @@
             />
         </div>
 
-        <GameWelcomeScreen
+        <GameScreen
             v-if="showWelcome"
             :screen="screen"
             :winner="winnerMessage"
@@ -34,7 +34,7 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import GameCard from '@/components/GameCard.vue'
 import GameDashboard from '@/components/GameDashboard.vue'
-import GameWelcomeScreen from '@/components/GameWelcomeScreen.vue'
+import GameScreen from '@/components/GameScreen.vue'
 
 type Mode = 'solo' | 'vsAI'
 type Turn = 'player' | 'ai'
@@ -277,7 +277,6 @@ onUnmounted(() => {
 <style lang="scss" scoped>
 .az-game {
     position: relative;
-    margin: 32px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
