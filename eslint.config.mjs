@@ -16,6 +16,10 @@ export default [
         ...js.configs.recommended,
         languageOptions: {
             globals: globals.browser
+        },
+        rules: {
+            quotes: ['error', 'single'],
+            semi: ['error', 'never'],
         }
     },
     {
@@ -32,7 +36,9 @@ export default [
             vue
         },
         rules: {
-            ...vue.configs['flat/recommended'].rules
+            ...vue.configs['flat/recommended'].rules,
+            quotes: ['error', 'single'],
+            semi: ['error', 'never'],
         }
     },
     {
@@ -46,7 +52,9 @@ export default [
             '@typescript-eslint': tseslint
         },
         rules: {
-            ...tseslint.configs.recommended.rules
+            ...tseslint.configs.recommended.rules,
+            quotes: ['error', 'single'],
+            semi: ['error', 'never'],
         }
     },
     {

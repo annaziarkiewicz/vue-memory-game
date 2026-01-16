@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
 import Layout from '@/layouts/Cardboard.vue'
-import AppMemory from "@/components/AppMemory.vue"
+import AppMemory from '@/components/AppMemory.vue'
 </script>
 
 <style lang="scss" scoped></style>
