@@ -129,7 +129,7 @@ defineEmits(['play'])
 
     &__button {
         width: 100%;
-        padding: 12px;
+        padding: 16px;
         border-radius: 12px;
         font-size: 18px;
         font-weight: 500;
@@ -145,10 +145,10 @@ defineEmits(['play'])
         }
 
         &--mint {
-            background: $color-mint-400;
+            background: $color-mint-300;
 
             &:hover {
-                background: $color-mint-500;
+                background: $color-mint-400;
             }
         }
     }
