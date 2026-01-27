@@ -277,9 +277,6 @@ onUnmounted(() => {
 <style lang="scss" scoped>
 .az-game {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
     &__board {
         padding: 24px;

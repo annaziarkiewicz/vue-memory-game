@@ -1,7 +1,7 @@
 <template>
     <div class="az-dashboard">
-        <div class="az-dashboard__time">
-            Time: {{ time }}s
+        <div class="az-dashboard__moves">
+            Moves: {{ moves }}
         </div>
 
         <div v-if="paused" class="az-dashboard__paused">
@@ -17,21 +17,33 @@
             {{ currentTurn === 'player' ? 'Your turn' : 'AI’s turn' }}
         </div>
 
-        <div class="az-dashboard__moves">
-            Moves: {{ moves }}
+        <div class="az-dashboard__time">
+            Time: {{ formattedTime }}
         </div>
     </div>
 </template>
 
 <script lang="ts" setup>
-defineProps<{
-    time: number
+import { computed } from 'vue'
+
+const props = defineProps<{
     moves: number
+    time: number
     paused: boolean
     mode: 'solo' | 'vsAI'
     currentTurn: 'player' | 'ai'
     showTurn: boolean
 }>()
+
+const formattedTime = computed(() => {
+    const minutes = Math.floor(props.time / 60)
+    const seconds = props.time % 60
+
+    const mm = String(minutes).padStart(2, '0')
+    const ss = String(seconds).padStart(2, '0')
+
+    return `${mm}:${ss}`
+})
 </script>
 
 <style lang="scss" scoped>
@@ -47,7 +59,7 @@ defineProps<{
     font-weight: 400;
     color: $color-grey-400;
 
-    &__time {
+    &__moves {
         width: 120px;
         text-align: left;
     }
@@ -84,7 +96,7 @@ defineProps<{
         }
     }
 
-    &__moves {
+    &__time {
         width: 120px;
         text-align: right;
     }
